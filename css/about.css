@@ -1,0 +1,189 @@
+@charset "utf-8";
+.mid{
+    height: 180vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.headimg {
+    position: relative;
+    height: 280px;
+    width: 100%;
+    background-image: url("../image/headimg2.JPG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    overflow: hidden;
+    border-bottom: 5px solid rgb(58, 83, 85);
+    animation: headload 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, transparent 100%);
+}
+
+.headimg h1{
+    color: rgba(249, 249, 140, 0.749);
+    font-size: 5em;
+    text-align: center;
+    line-height: 200px;
+    text-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        0 0 10px rgba(255, 215, 0, 0.2); 
+    letter-spacing: 1px;
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% { 
+        text-shadow: 
+            0 2px 4px rgba(0, 0, 0, 0.3),
+            0 0 10px rgba(255, 215, 0, 0.2);
+    }
+    50% { 
+        text-shadow: 
+            0 3px 8px rgba(0, 0, 0, 0.325),
+            0 0 25px rgba(255, 215, 0, 0.6); 
+    }
+}
+
+.mid .ab{
+    width: 800px;
+    height: 300px;
+    box-shadow: 0 0 15px rgb(83, 103, 110);
+    background: rgba(71, 142, 175, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    overflow: hidden;
+    margin-top: 40px;
+}
+.a1 .img{
+    background-image: url("../image/about1.jpg");
+}
+.a2 .img{
+    background-image: url("../image/about2.jpg");
+}
+.a3 .img{
+    background-image: url("../image/about3.jpg");
+}
+
+.ab p {
+    color: #3a5a5a; 
+    line-height: 1.8; 
+    font-size: 1.05rem; 
+    margin: 1.2em 0;
+    text-align: justify; 
+    hyphens: auto; 
+}
+
+
+.ab .txt{
+    width: 400px;
+    margin: 0 50px 0 50px;
+}
+.ab h2 {
+    text-align: center;
+    color: #335672;
+    margin: 25px 0 15px; 
+    position: relative;
+    padding-bottom: 12px;
+    font-weight: 600; 
+}
+
+.ab h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: #578ed2;
+    border-radius: 1px;
+}
+
+.ab .img {
+    width: 300px;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(0.3) brightness(0.95);
+    opacity: 0.9;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1); 
+    transform-origin: center; 
+    will-change: transform, filter; 
+}
+
+.ab .img:hover {
+    transform: scale(1.08) translateY(-5px); 
+    filter: grayscale(0) brightness(1.05); 
+    opacity: 1;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.ab .imghid{
+    overflow: hidden;
+}
+.a1{
+    margin-left: 40%;
+    animation: a1load 2.5s linear;
+    transition: 0.5s  1s;
+}
+.a2{
+    margin-left: 10%;
+    animation: a2load 3.6s linear;
+    transition: 0.5s;
+}
+.a3{
+    margin-left: 40%;
+    animation: a3load 4.8s linear;
+    transition: 0.5s;
+}
+
+
+@keyframes a1load{
+    0%{
+        opacity: 0;
+    }
+    70%{
+        opacity: 0;
+        margin-top: 100px;
+    }
+    100%{
+        opacity: 1;
+        margin-top: 40px;
+    }
+}
+@keyframes a2load{
+    0%{
+        
+        opacity: 0;
+    }
+    80%{
+        opacity: 0;
+        margin-top: 100px;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes a3load{
+    0%{
+        
+        opacity: 0;
+    }
+    90%{
+        opacity: 0;
+        margin-top: 100px;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes headload{
+    0%{
+        height: 0px;
+    }
+    100%{
+        height: 240px;
+    }
+}
